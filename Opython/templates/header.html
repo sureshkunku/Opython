@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OPython</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+{% block header %}
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/home">OPYTHON</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+      <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Services <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Devlopment</a></li>
+          <li><a href="#">Project</a></li>
+          <li><a href="#">Courses</a></li>
+        </ul>
+      </li>
+      <li><a href="#">About Us</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {% if 'username' in request.session %}
+	      	<li><a href="/signout/">SIGNOUT</a></li>
+	      	<li> <a href="">WELCOME {{ request.session.username }}</a></li>
+	    {% else %}
+            <li><a href="/user_registration"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {% endif %}
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+<div class="container">
+    {% block content %}
+     This is first application in django , created for leanrning.&nbsp;
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+        &nbsp;<br>
+    {% endblock %}
+</div>
+<div class="footer">
+{% block footer %}
+<!-- Footer -->
+<footer class="page-footer font-small special-color-dark pt-4" style="background: gray">
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-6 mb-6">
+          <!-- Form -->
+          <form class="form-inline">
+            <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search" aria-label="Search">
+            <i class="fa fa-search" aria-hidden="true"></i>
+          </form>
+          <!-- Form -->
+        </div>
+        <!--Grid column-->
+        <!--Grid column-->
+        <div class="col-md-5 mb-5">
+          <form class="input-group">
+            <input type="text" class="form-control form-control-sm" placeholder="Your email" aria-label="Your email" aria-describedby="basic-addon2">
+          </form>
+        </div>
+        <div class="col-md-1 mb-1">
+          <!-- Form -->
+          <form class="input-group-append">
+              <button class="btn btn-sm btn-outline-white" type="button">Sign up</button>
+          </form>
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Footer Elements -->
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright: OPython
+      {% comment %}<a href="/home"> OPython</a>{% endcomment %}
+    </div>
+
+  </footer>
+  <!-- Footer -->
+{% endblock %}
+</div>
+</body>
+</html>
+
